@@ -5,7 +5,4 @@ Moje obycie z platformą .NET Core jest dość małe, dlatego nie będę ukrywa�
 
 Nie do końca jasno było opisane w treści jak połączyć filmy w API z ocenami lokalnymi, więc uznałem że forma jest dowolna. Dlatego w bazie danych trzymam tylko oceny z identyfikatorami filmów, a same filmy są pobierane jednorazowo z API.
 
-Aby poprawnie uruchomić projekt, wystarczy odpalić:
-
-## Add-Migration Initial
-## Update-Database
+Po uruchomieniu "Update-Database" baza danych powinna się poprawnie zbudować
