@@ -80,6 +80,11 @@ namespace Movies.Controllers
         {
             var filmsJson = objectFromApi.Last.First;
 
+            if (moviesList == null)
+            {
+                moviesList = new List<Film>();
+            }
+
             foreach (var film in filmsJson)
             {
                 string title = film.SelectToken("title").Value<string>();
