@@ -1,0 +1,11 @@
+﻿@model Movies.Models.Film
+@{ var averageRate = Model.rates.Count > 0 ? Model.rates.Average() : 0;}
+
+<div>
+    <h2>@Model.title</h2>
+    <p><b>Producer:</b> @Model.producer</p>
+    <p><b>Director:</b> @Model.director</p>
+    <p><b>Release date:</b> @Model.releaseDate.ToString("yyyy-MM-dd")</p>
+    <span><b>Details:</b><BR />@Model.openingCrawl</span>
+    <p><b>Average rate:</b> @averageRate</p>
+</div>

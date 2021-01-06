@@ -1,0 +1,32 @@
+﻿@model Movies.Models.Film
+@{SelectList listRates = new SelectList(new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 });}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Movie rater</title>
+</head>
+<body>
+    <div>
+        <a asp-action="Index">Back</a>
+    </div>
+    <div class="text-center">
+        <h1 class="display-4">RATE MOVIE</h1>
+    </div>
+    <div>
+        @await Html.PartialAsync("FilmDetails", Model)
+    </div>
+    <div>
+        <p><b>Rate:</b></p>
+        @using (Html.BeginForm())
+        {
+            @Html.DropDownListFor(s => s.userRate, listRates);
+            @Html.HiddenFor(s => s.id);
+            <input type="submit" />
+        }
+
+    </div>
+</body>
+</html>

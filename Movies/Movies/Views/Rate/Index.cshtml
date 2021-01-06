@@ -1,0 +1,25 @@
+﻿@model List<Movies.Models.Film>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Movie rater</title>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4">MOVIE RATER</h1>
+    </div>
+    <div>
+        @foreach (var item in Model)
+        {
+        <div style="border: 1px solid black;">
+            @await Html.PartialAsync("FilmDetails", item)
+            <a asp-action="Details" asp-route-id="@item.id"><h2>Rate</h2></a>
+        </div> 
+        <br/>
+        }
+    </div>
+</body>
+</html>
